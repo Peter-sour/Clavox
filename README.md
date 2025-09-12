@@ -15,6 +15,7 @@ Aplikasi ini terintegrasi dengan **Ionic + Capacitor** sehingga bisa dijalankan 
 ---
 
 ## ✨ Fitur Utama
+
 - 🔐 Autentikasi OTP & Nomor Telepon  
 - 💬 Chat Realtime (Socket.IO)  
 - 🎨 UI Modern menggunakan Tailwind CSS  
@@ -25,21 +26,22 @@ Aplikasi ini terintegrasi dengan **Ionic + Capacitor** sehingga bisa dijalankan 
 ---
 
 ## 📂 Struktur Proyek
-Clavox/  
-│── backend/        # Server Node.js + Express  
-│   ├── src/        # Kode utama backend  
-│   ├── package.json  
-│   └── ...  
-│  
-│── frontend/       # Aplikasi React + Vite + Tailwind  
-│   ├── src/        # Kode utama frontend  
-│   ├── public/  
-│   ├── package.json  
-│   └── ...  
-│  
-│── capacitor.config.ts # Konfigurasi Capacitor  
-│── README.md  
-└── ...  
+
+```
+Clavox/
+├── backend/              # Server Node.js + Express
+│   ├── src/              # Kode utama backend
+│   ├── package.json
+│   └── ...
+├── frontend/             # Aplikasi React + Vite + Tailwind
+│   ├── src/              # Kode utama frontend
+│   ├── public/
+│   ├── package.json
+│   └── ...
+├── capacitor.config.ts   # Konfigurasi Capacitor
+├── README.md
+└── ...
+```
 
 ---
 
@@ -49,33 +51,38 @@ Clavox/
 ```bash
 git clone https://github.com/Peter-sour/Clavox.git
 cd Clavox
-2. Setup Backend
-bash
-Copy code
+```
+
+### 2. Setup Backend
+```bash
 cd backend
 npm install express socket.io cors dotenv
 npm run dev   # server berjalan di http://localhost:5000
-3. Setup Frontend
-bash
-Copy code
+```
+
+### 3. Setup Frontend
+```bash
 cd ../frontend
 npm install
 npm install react-router-dom
 npm install react-phone-number-input libphonenumber-js --legacy-peer-deps
 npm install react-otp-input
-4. Tambahan Ionic & Capacitor
-bash
-Copy code
+```
+
+### 4. Tambahan Ionic & Capacitor
+```bash
 npm install --save-dev @capacitor/cli
 npm install @capacitor/core
 npm install @ionic/react @ionic/react-router ionicons
-5. Jalankan Frontend
-bash
-Copy code
+```
+
+### 5. Jalankan Frontend
+```bash
 npm run dev   # berjalan di http://localhost:5173
-6. Build & Integrasi Mobile
-bash
-Copy code
+```
+
+### 6. Build & Integrasi Mobile
+```bash
 cd frontend
 npm run build
 npx cap sync
@@ -83,39 +90,50 @@ npx cap add android
 npx cap add ios
 npx cap open android   # buka di Android Studio
 npx cap open ios       # buka di Xcode
-🧑‍💻 Scripts
-Backend (/backend)
-bash
-Copy code
+```
+
+---
+
+## 🧑‍💻 Scripts
+
+### Backend (/backend)
+```bash
 npm run dev       # mode development
 npm start         # mode production
-Frontend (/frontend)
-bash
-Copy code
+```
+
+### Frontend (/frontend)
+```bash
 npm run dev       # jalankan frontend
 npm run build     # build production
 npm run preview   # preview build
-🛠️ Tech Stack
-Frontend: React, Vite, Tailwind, Ionic, Capacitor
-Backend: Node.js, Express, Socket.IO
+```
 
-📌 Roadmap
- Push Notification
+---
 
- Enkripsi End-to-End
+## 🛠️ Tech Stack
 
- Dark Mode
+- **Frontend**: React, Vite, Tailwind, Ionic, Capacitor
+- **Backend**: Node.js, Express, Socket.IO
 
- Deploy Backend ke Cloud
+---
 
-📸 Preview
-(Tambahkan screenshot aplikasi di sini)
+## 📌 Roadmap
 
-📜 Lisensi
+- [ ] Push Notification
+- [ ] Enkripsi End-to-End
+- [ ] Dark Mode
+- [ ] Deploy Backend ke Cloud
+
+---
+
+
+## 📜 Lisensi
+
 Proyek ini dirilis di bawah MIT License.
 
-💡 Support
-Jika project ini membantu, jangan lupa beri ⭐ di repo ini.
+---
 
-yaml
-Copy code
+## 💡 Support
+
+Jika project ini membantu, jangan lupa beri ⭐ di repo ini!
