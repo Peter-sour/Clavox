@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ClavoxLoadingScreen from "./components/LoadingScreen";
-import LoginScreen from "./components/LoginScreen";
-import OTPVerificationScreen from "./components/OTPVerificationScreen";
+import ClavoxLoadingScreen from "./pages/LoadingScreen";
+import LoginScreen from "./pages/Auth/LoginScreen";
+import OTPVerificationScreen from "./pages/Auth/OtpVerification";
 
 
 function App() {

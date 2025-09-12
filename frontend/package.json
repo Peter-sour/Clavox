@@ -20,6 +20,7 @@
     "libphonenumber-js": "^1.12.16",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-otp-input": "^3.1.1",
     "react-phone-number-input": "^3.4.12",
     "react-router-dom": "^7.8.2"
   },
