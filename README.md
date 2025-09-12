@@ -182,13 +182,32 @@ Kontribusi selalu diterima! Berikut cara untuk berkontribusi:
 
 ## 📝 Roadmap
 
-- [ ] Implementasi chat real-time lengkap
-- [ ] Push notifications
-- [ ] File sharing dalam chat
-- [ ] Voice messages
-- [ ] Group chat
-- [ ] Dark mode
-- [ ] Multi-language support
+<div align="center">
+  
+| Status | Fitur | Progress |
+|--------|-------|----------|
+| ✅ | Login & Registrasi | ![100%](https://progress-bar.dev/100) |
+| ✅ | OTP Verification | ![100%](https://progress-bar.dev/100) |
+| 🚧 | Real-time Chat | ![60%](https://progress-bar.dev/60) |
+| 📋 | Push Notifications | ![0%](https://progress-bar.dev/0) |
+| 📋 | File Sharing | ![0%](https://progress-bar.dev/0) |
+| 📋 | Voice Messages | ![0%](https://progress-bar.dev/0) |
+| 📋 | Group Chat | ![0%](https://progress-bar.dev/0) |
+| 📋 | Dark Mode | ![0%](https://progress-bar.dev/0) |
+| 📋 | Multi-language | ![0%](https://progress-bar.dev/0) |
+
+</div>
+
+### 🎯 Upcoming Features
+
+- 🔔 **Push Notifications** - Notifikasi real-time
+- 📁 **File Sharing** - Berbagi gambar, video, dokumen
+- 🎤 **Voice Messages** - Pesan suara
+- 👥 **Group Chat** - Chat grup dengan multiple users
+- 🌙 **Dark Mode** - Mode gelap untuk UI
+- 🌐 **Multi-language** - Dukungan bahasa Indonesia & English
+- 📊 **Analytics** - Dashboard analytics untuk admin
+- 🔐 **End-to-end Encryption** - Keamanan pesan tingkat tinggi
 
 ## 📄 License
 
