@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../assets/Logo.png';
+import Logo from '../../assets/logo.png';
 import PhoneInput from 'react-phone-number-input';
 
 const LoginScreen = () => {
@@ -48,7 +48,6 @@ const LoginScreen = () => {
               onChange={setPhoneNumber}
               defaultCountry="ID"
               className="phone-input"
-              flags={null}
             />
           ) : (
             <input
