@@ -1,232 +1,121 @@
 # Clavox 💬
 
-<div align="center">
-  <img src="https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React">
-  <img src="https://img.shields.io/badge/Node.js-18.0+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/Ionic-7.0+-3880FF?style=for-the-badge&logo=ionic&logoColor=white" alt="Ionic">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License">
-</div>
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
+![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node-dot-js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
 
-<br>
+Clavox adalah aplikasi chat real-time berbasis **React + Vite + Tailwind** untuk frontend, serta **Node.js + Express + Socket.IO** untuk backend.  
+Aplikasi ini terintegrasi dengan **Ionic + Capacitor** sehingga bisa dijalankan sebagai **aplikasi mobile (Android/iOS)**.
 
-<p align="center">
-  <strong>Aplikasi chat modern yang dapat berjalan di web, Android, dan iOS</strong>
-</p>
+---
 
-<p align="center">
-  Clavox adalah aplikasi chat yang dibangun dengan teknologi modern, terdiri dari frontend React dan backend Node.js, dengan kemampuan untuk deploy ke platform mobile menggunakan Ionic dan Capacitor.
-</p>
+## ✨ Fitur Utama
+- 🔐 Autentikasi OTP & Nomor Telepon  
+- 💬 Chat Realtime (Socket.IO)  
+- 🎨 UI Modern menggunakan Tailwind CSS  
+- 📱 Build ke Mobile App dengan Capacitor + Ionic  
+- ⚡ Performa cepat berkat Vite + React  
+- 🔧 Backend API dengan Node.js + Express  
 
-## 🚀 Fitur
+---
 
-- ✅ **Registrasi & Login** dengan nomor telepon
-- ✅ **Verifikasi OTP** yang aman
-- ✅ **Chat Real-time** dengan Socket.IO (WIP 🚧)
-- ✅ **UI Modern** dengan Tailwind CSS
-- ✅ **Multi-platform** - Web, Android, iOS
-- ✅ **Responsive Design** untuk semua ukuran layar
+## 📂 Struktur Proyek
+Clavox/  
+│── backend/        # Server Node.js + Express  
+│   ├── src/        # Kode utama backend  
+│   ├── package.json  
+│   └── ...  
+│  
+│── frontend/       # Aplikasi React + Vite + Tailwind  
+│   ├── src/        # Kode utama frontend  
+│   ├── public/  
+│   ├── package.json  
+│   └── ...  
+│  
+│── capacitor.config.ts # Konfigurasi Capacitor  
+│── README.md  
+└── ...  
 
-## 🛠️ Tech Stack
-
-### Frontend
-- **React** 18+ - Library UI modern
-- **Vite** - Build tool yang cepat
-- **Tailwind CSS** - Utility-first CSS framework
-- **Ionic Framework** - UI components untuk mobile
-- **Capacitor** - Cross-platform native runtime
-- **React Router** - Client-side routing
-- **React Phone Number Input** - Input nomor telepon
-- **React OTP Input** - Input verifikasi OTP
-
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web framework
-- **Socket.IO** - Real-time communication (WIP)
-
-## 📋 Prasyarat
-
-Pastikan Anda telah menginstall:
-
-- **Node.js** (v18.0 atau lebih baru)
-- **npm** atau **yarn**
-- **Android Studio** (untuk build Android)
-- **Xcode** (untuk build iOS - hanya di macOS)
+---
 
 ## 🚀 Quick Start
 
 ### 1. Clone Repository
-
 ```bash
 git clone https://github.com/Peter-sour/Clavox.git
 cd Clavox
-```
-
-### 2. Setup Backend
-
-```bash
+2. Setup Backend
+bash
+Copy code
 cd backend
+npm install express socket.io cors dotenv
+npm run dev   # server berjalan di http://localhost:5000
+3. Setup Frontend
+bash
+Copy code
+cd ../frontend
 npm install
-npm run start
-```
-
-Server akan berjalan di `http://localhost:5000`
-
-### 3. Setup Frontend
-
-```bash
+npm install react-router-dom
+npm install react-phone-number-input libphonenumber-js --legacy-peer-deps
+npm install react-otp-input
+4. Tambahan Ionic & Capacitor
+bash
+Copy code
+npm install --save-dev @capacitor/cli
+npm install @capacitor/core
+npm install @ionic/react @ionic/react-router ionicons
+5. Jalankan Frontend
+bash
+Copy code
+npm run dev   # berjalan di http://localhost:5173
+6. Build & Integrasi Mobile
+bash
+Copy code
 cd frontend
-npm install
-
-# Install Ionic CLI global (jika belum ada)
-npm install -g @ionic/cli
-
-# Install dependencies untuk mobile
-npm install @capacitor/core @capacitor/cli @capacitor/android
-```
-
-### 4. Jalankan Development Server
-
-```bash
-npm run dev
-```
-
-Aplikasi akan tersedia di `http://localhost:5173`
-
-## 📱 Build untuk Mobile
-
-### Android
-
-```bash
-# Build web assets
 npm run build
-
-# Add Android platform (hanya pertama kali)
+npx cap sync
 npx cap add android
-
-# Sync assets ke platform
-npx cap sync
-
-# Buka di Android Studio
-npx cap open android
-```
-
-### iOS (macOS only)
-
-```bash
-# Install iOS dependencies
-npm install @capacitor/ios
-
-# Add iOS platform (hanya pertama kali)
 npx cap add ios
+npx cap open android   # buka di Android Studio
+npx cap open ios       # buka di Xcode
+🧑‍💻 Scripts
+Backend (/backend)
+bash
+Copy code
+npm run dev       # mode development
+npm start         # mode production
+Frontend (/frontend)
+bash
+Copy code
+npm run dev       # jalankan frontend
+npm run build     # build production
+npm run preview   # preview build
+🛠️ Tech Stack
+Frontend: React, Vite, Tailwind, Ionic, Capacitor
+Backend: Node.js, Express, Socket.IO
 
-# Sync assets ke platform
-npx cap sync
+📌 Roadmap
+ Push Notification
 
-# Buka di Xcode
-npx cap open ios
-```
+ Enkripsi End-to-End
 
-## 📂 Struktur Project
+ Dark Mode
 
-```
-Clavox/
-├── 📁 backend/                 # Backend API (Node.js + Express)
-│   ├── 📄 server.js           # Entry point server
-│   ├── 📁 routes/             # API routes
-│   ├── 📁 controllers/        # Business logic
-│   ├── 📁 models/             # Data models
-│   └── 📄 package.json
-│
-├── 📁 frontend/               # Frontend App (React + Ionic)
-│   ├── 📁 android/            # Android project files
-│   ├── 📁 src/
-│   │   ├── 📁 assets/         # Static assets
-│   │   ├── 📁 components/     # Reusable components
-│   │   ├── 📁 screens/        # Application screens
-│   │   ├── 📄 App.jsx         # Main App component
-│   │   └── 📄 main.jsx        # Entry point
-│   ├── 📄 capacitor.config.json
-│   └── 📄 package.json
-│
-└── 📄 README.md               # Project documentation
-```
+ Deploy Backend ke Cloud
 
-## 🧪 Available Scripts
+📸 Preview
+(Tambahkan screenshot aplikasi di sini)
 
-### Backend
+📜 Lisensi
+Proyek ini dirilis di bawah MIT License.
 
-| Script | Deskripsi |
-|--------|-----------|
-| `npm start` | Menjalankan server dalam mode produksi |
-| `npm run dev` | Menjalankan server dengan nodemon |
+💡 Support
+Jika project ini membantu, jangan lupa beri ⭐ di repo ini.
 
-### Frontend
-
-| Script | Deskripsi |
-|--------|-----------|
-| `npm run dev` | Menjalankan development server |
-| `npm run build` | Build untuk produksi |
-| `npm run preview` | Preview build hasil |
-| `npm run lint` | Check kode dengan ESLint |
-
-## 🤝 Kontribusi
-
-Kontribusi selalu diterima! Berikut cara untuk berkontribusi:
-
-1. **Fork** repository ini
-2. **Clone** fork Anda
-3. **Buat branch** untuk fitur: `git checkout -b fitur-amazing`
-4. **Commit** perubahan: `git commit -m 'Add: fitur amazing'`
-5. **Push** ke branch: `git push origin fitur-amazing`
-6. **Buat Pull Request**
-
-## 📝 Roadmap
-
-<div align="center">
-  
-| Status | Fitur | Progress |
-|--------|-------|----------|
-| ✅ | Login & Registrasi | ![100%](https://progress-bar.dev/100) |
-| ✅ | OTP Verification | ![100%](https://progress-bar.dev/100) |
-| 🚧 | Real-time Chat | ![60%](https://progress-bar.dev/60) |
-| 📋 | Push Notifications | ![0%](https://progress-bar.dev/0) |
-| 📋 | File Sharing | ![0%](https://progress-bar.dev/0) |
-| 📋 | Voice Messages | ![0%](https://progress-bar.dev/0) |
-| 📋 | Group Chat | ![0%](https://progress-bar.dev/0) |
-| 📋 | Dark Mode | ![0%](https://progress-bar.dev/0) |
-| 📋 | Multi-language | ![0%](https://progress-bar.dev/0) |
-
-</div>
-
-### 🎯 Upcoming Features
-
-- 🔔 **Push Notifications** - Notifikasi real-time
-- 📁 **File Sharing** - Berbagi gambar, video, dokumen
-- 🎤 **Voice Messages** - Pesan suara
-- 👥 **Group Chat** - Chat grup dengan multiple users
-- 🌙 **Dark Mode** - Mode gelap untuk UI
-- 🌐 **Multi-language** - Dukungan bahasa Indonesia & English
-- 📊 **Analytics** - Dashboard analytics untuk admin
-- 🔐 **End-to-end Encryption** - Keamanan pesan tingkat tinggi
-
-## 📄 License
-
-Project ini menggunakan [MIT License](LICENSE).
-
-## 👥 Tim
-
-- **Peter-sour** - *Initial work* - [@Peter-sour](https://github.com/Peter-sour)
-
-## 💬 Support
-
-Jika Anda menemukan bug atau memiliki saran, silakan:
-
-- Buat [Issue](https://github.com/Peter-sour/Clavox/issues)
-- Kirim email ke: [peter@example.com](mailto:peter@example.com)
-
----
-
-<div align="center">
-  <p>⭐ Jangan lupa beri star jika project ini membantu Anda!</p>
-  <p>Made with ❤️ by Peter-sour</p>
-</div>
+yaml
+Copy code
