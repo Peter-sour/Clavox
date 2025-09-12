@@ -1,3 +1,88 @@
+/* BAGIAN 1: DIREKTIF WAJIB TAILWIND CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* BAGIAN 3: CSS CUSTOM UNTUK LIBRARY react-phone-number-input */
+
+/* Styling untuk KOTAK INPUT nomor telepon */
+.phone-input .PhoneInputInput {
+  background-color: #2D2A2A;
+  color: white;
+  border: 1px solid #4A5568;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-shadow: none;
+}
+
+/* Style saat input di-klik (focus) */
+.phone-input .PhoneInputInput:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Styling untuk KOTAK PEMILIH KODE NEGARA (yang menampilkan +62) */
+.phone-input .PhoneInputCountry {
+  background-color: #2D2A2A;
+  border: 1px solid #4A5568;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75rem;
+}
+
+/* * ===============================================================
+ * ==> KODE BARU UNTUK MEMBUAT DROPDOWN BERWARNA HITAM <==
+ * ===============================================================
+*/
+
+/* Mengatur container dropdown utama */
+.PhoneInputCountrySelect {
+  background-color: #2D2A2A; /* Latar belakang dropdown */
+  border: 1px solid #4A5568; /* Border dropdown */
+  color: white;
+}
+
+/* Mengatur setiap pilihan negara di dalam dropdown */
+.PhoneInputCountrySelect-option {
+  background-color: #2D2A2A;
+  color: white;
+}
+
+/* Mengatur warna saat satu pilihan di-hover atau dipilih */
+.PhoneInputCountrySelect-option--focus {
+  background-color: #4A5568; /* Warna abu-abu yang sedikit lebih terang */
+}
+
+/* Mengatur warna panah dropdown agar terlihat */
+.PhoneInputCountrySelect-arrow {
+  border-color: white;
+  opacity: 0.6;
+}
+/*
+ * ========================================================
+ * ==> KODE BARU UNTUK STYLING INPUT OTP KOTAK-KOTAK <==
+ * ========================================================
+*/
+.otp-input-box {
+  width: 3rem !important; /* Lebar setiap kotak */
+  height: 3.5rem; /* Tinggi setiap kotak */
+  margin: 0 0.25rem; /* Jarak antar kotak */
+  font-size: 1.5rem; /* Ukuran angka di dalam kotak */
+  border-radius: 0.5rem; /* Sudut kotak */
+  border: 1px solid #4A5568; /* Warna border */
+  background-color: #2D2A2A; /* Warna latar belakang kotak */
+  color: white;
+  text-align: center;
+}
+
+/* Style saat kotak di-klik (focus) */
+.otp-input-box:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
