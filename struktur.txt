@@ -1,28 +1,275 @@
-src/
- ├── assets/             # gambar, icon, sound notification, dll
- ├── components/         # komponen kecil reusable
- │    ├── ChatBubble.tsx
- │    ├── ChatInput.tsx
- │    ├── Header.tsx
- │    └── Loader.tsx
- ├── pages/              # halaman utama
- │    ├── Auth/          # halaman seputar login/registrasi
- │    │    ├── Login.tsx
- │    │    ├── Register.tsx
- │    │    └── OtpVerification.tsx
- │    ├── Loading.tsx    # splash/loading screen
- │    ├── Chat/
- │    │    ├── ChatList.tsx     # daftar chat/room
- │    │    └── ChatRoom.tsx     # isi room chat
- │    ├── Profile.tsx
- │    └── Settings.tsx
- ├── context/            # React Context (AuthContext, ChatContext)
- │    ├── AuthContext.tsx
- │    └── ChatContext.tsx
- ├── hooks/              # custom hooks (useAuth, useChat, dsb)
- ├── services/           # API atau socket (misal Firebase/Socket.IO)
- │    ├── api.ts
- │    └── socket.ts
- ├── App.tsx
- ├── main.tsx
- └── router.tsx          # semua route diatur di sini
+# Struktur Folder Aplikasi Chat Clavox
+
+```
+clavox/
+├── README.md
+├── package.json
+├── .gitignore
+├── docker-compose.yml
+├── .env.example
+│
+├── frontend/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .env
+│   ├── .env.example
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src/
+│   │   ├── index.js
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   ├── Header.js
+│   │   │   │   ├── Footer.js
+│   │   │   │   ├── Loading.js
+│   │   │   │   ├── Modal.js
+│   │   │   │   └── Button.js
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.js
+│   │   │   │   ├── Register.js
+│   │   │   │   ├── OTPVerification.js
+│   │   │   │   ├── ForgotPassword.js
+│   │   │   │   └── ResetPassword.js
+│   │   │   ├── chat/
+│   │   │   │   ├── ChatRoom.js
+│   │   │   │   ├── ChatList.js
+│   │   │   │   ├── MessageInput.js
+│   │   │   │   ├── MessageList.js
+│   │   │   │   ├── MessageItem.js
+│   │   │   │   ├── UserList.js
+│   │   │   │   ├── TypingIndicator.js
+│   │   │   │   └── FileUpload.js
+│   │   │   └── profile/
+│   │   │       ├── Profile.js
+│   │   │       ├── EditProfile.js
+│   │   │       └── Settings.js
+│   │   ├── pages/
+│   │   │   ├── HomePage.js
+│   │   │   ├── ChatPage.js
+│   │   │   ├── LoginPage.js
+│   │   │   ├── RegisterPage.js
+│   │   │   ├── ProfilePage.js
+│   │   │   └── NotFoundPage.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   ├── socket.js
+│   │   │   ├── chat.js
+│   │   │   └── upload.js
+│   │   ├── context/
+│   │   │   ├── AuthContext.js
+│   │   │   ├── ChatContext.js
+│   │   │   └── SocketContext.js
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useSocket.js
+│   │   │   ├── useChat.js
+│   │   │   └── useLocalStorage.js
+│   │   ├── utils/
+│   │   │   ├── constants.js
+│   │   │   ├── helpers.js
+│   │   │   ├── validation.js
+│   │   │   └── formatters.js
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   │   ├── logo.png
+│   │   │   │   ├── avatar-default.png
+│   │   │   │   └── backgrounds/
+│   │   │   ├── icons/
+│   │   │   └── sounds/
+│   │   │       ├── notification.mp3
+│   │   │       └── message-sent.mp3
+│   │   └── styles/
+│   │       ├── globals.css
+│   │       ├── variables.css
+│   │       ├── components/
+│   │       │   ├── auth.css
+│   │       │   ├── chat.css
+│   │       │   └── profile.css
+│   │       └── themes/
+│   │           ├── light.css
+│   │           └── dark.css
+│   ├── build/
+│   └── node_modules/
+│
+├── backend/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .env
+│   ├── .env.example
+│   ├── server.js
+│   ├── app.js
+│   ├── config/
+│   │   ├── database.js
+│   │   ├── redis.js
+│   │   ├── email.js
+│   │   ├── socket.js
+│   │   └── cloudinary.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── userController.js
+│   │   ├── chatController.js
+│   │   ├── messageController.js
+│   │   ├── otpController.js
+│   │   └── uploadController.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Chat.js
+│   │   ├── Message.js
+│   │   ├── OTP.js
+│   │   └── index.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── users.js
+│   │   ├── chats.js
+│   │   ├── messages.js
+│   │   ├── otp.js
+│   │   └── upload.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── validation.js
+│   │   ├── rateLimit.js
+│   │   ├── upload.js
+│   │   └── errorHandler.js
+│   ├── services/
+│   │   ├── emailService.js
+│   │   ├── otpService.js
+│   │   ├── chatService.js
+│   │   ├── uploadService.js
+│   │   └── notificationService.js
+│   ├── socket/
+│   │   ├── socketHandler.js
+│   │   ├── chatEvents.js
+│   │   ├── userEvents.js
+│   │   └── messageEvents.js
+│   ├── utils/
+│   │   ├── logger.js
+│   │   ├── helpers.js
+│   │   ├── constants.js
+│   │   ├── validators.js
+│   │   └── encryption.js
+│   ├── database/
+│   │   ├── migrations/
+│   │   │   ├── 001_create_users_table.js
+│   │   │   ├── 002_create_chats_table.js
+│   │   │   ├── 003_create_messages_table.js
+│   │   │   └── 004_create_otps_table.js
+│   │   ├── seeders/
+│   │   │   ├── userSeeder.js
+│   │   │   └── chatSeeder.js
+│   │   └── connection.js
+│   ├── templates/
+│   │   ├── email/
+│   │   │   ├── otp-verification.html
+│   │   │   ├── welcome.html
+│   │   │   ├── reset-password.html
+│   │   │   └── password-changed.html
+│   │   └── sms/
+│   │       └── otp-sms.txt
+│   ├── uploads/
+│   │   ├── avatars/
+│   │   ├── chat-files/
+│   │   ├── images/
+│   │   └── documents/
+│   ├── logs/
+│   │   ├── access.log
+│   │   ├── error.log
+│   │   └── socket.log
+│   ├── tests/
+│   │   ├── unit/
+│   │   │   ├── controllers/
+│   │   │   ├── services/
+│   │   │   └── models/
+│   │   ├── integration/
+│   │   │   ├── auth.test.js
+│   │   │   ├── chat.test.js
+│   │   │   └── socket.test.js
+│   │   └── fixtures/
+│   │       ├── users.json
+│   │       └── chats.json
+│   └── node_modules/
+│
+├── shared/
+│   ├── types/
+│   │   ├── user.js
+│   │   ├── chat.js
+│   │   ├── message.js
+│   │   └── socket.js
+│   ├── constants/
+│   │   ├── socketEvents.js
+│   │   ├── apiEndpoints.js
+│   │   └── errorCodes.js
+│   └── utils/
+│       ├── validation.js
+│       └── formatters.js
+│
+├── docs/
+│   ├── API.md
+│   ├── SOCKET_EVENTS.md
+│   ├── DEPLOYMENT.md
+│   ├── DATABASE_SCHEMA.md
+│   └── ARCHITECTURE.md
+│
+└── scripts/
+    ├── start-dev.sh
+    ├── start-prod.sh
+    ├── backup-db.sh
+    ├── deploy.sh
+    └── setup.sh
+```
+
+## Penjelasan Struktur Folder:
+
+### **Frontend (`/frontend`)**
+- **`components/`**: Komponen React yang dapat digunakan ulang
+  - `auth/`: Komponen untuk autentikasi (login, register, OTP)
+  - `chat/`: Komponen untuk fitur chat
+  - `common/`: Komponen umum
+- **`services/`**: Service untuk API calls dan Socket.IO
+- **`context/`**: React Context untuk state management
+- **`hooks/`**: Custom React hooks
+
+### **Backend (`/backend`)**
+- **`controllers/`**: Logic bisnis untuk handle request
+- **`models/`**: Model database (MongoDB/Sequelize)
+- **`routes/`**: Definisi API routes
+- **`socket/`**: Handler untuk Socket.IO events
+- **`services/`**: Service untuk email OTP dan lainnya
+- **`middleware/`**: Middleware untuk autentikasi, validasi, dll
+
+### **Shared (`/shared`)**
+- Kode yang digunakan bersama antara frontend dan backend
+- Types, constants, dan utility functions
+
+### **Key Features yang Tercakup:**
+
+1. **Autentikasi OTP dengan Nodemailer**
+   - Email templates di `backend/templates/email/`
+   - OTP service di `backend/services/otpService.js`
+   - OTP controller dan routes
+
+2. **Socket.IO Integration**
+   - Socket handlers di `backend/socket/`
+   - Socket service di `frontend/services/socket.js`
+   - Socket context untuk React
+
+3. **File Upload**
+   - Upload middleware dan service
+   - Folder untuk menyimpan file upload
+
+4. **Testing & Documentation**
+   - Folder tests untuk unit dan integration testing
+   - Documentation lengkap di folder `docs/`
+
+5. **Deployment Ready**
+   - Docker compose file
+   - Environment examples
+   - Deployment scripts
+
+   pdwo ksnj tqxh jkkq
+https://myaccount.google.com/apppasswords
