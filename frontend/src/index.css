@@ -1,10 +1,18 @@
-/* BAGIAN 1: DIREKTIF WAJIB TAILWIND CSS */
+/*
+ * BAGIAN 1: DIREKTIF WAJIB TAILWIND CSS
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-/* BAGIAN 3: CSS CUSTOM UNTUK LIBRARY react-phone-number-input */
+/*
+ * ===================================================================
+ * BAGIAN 3: CSS CUSTOM UNTUK LIBRARY react-phone-number-input
+ * ===================================================================
+*/
+
+/* --- Styling untuk KOTAK INPUT nomor teleponnya --- */
 .phone-input .PhoneInputInput {
   background-color: #2D2A2A;
   color: white;
@@ -12,38 +20,56 @@
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
   box-shadow: none;
 }
+
+/* --- Style saat input di-klik (focus) --- */
 .phone-input .PhoneInputInput:focus {
   outline: none;
   border-color: #3B82F6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
 }
+
+/* --- Styling untuk KOTAK PEMILIH NEGARA (yang menampilkan BENDERA) --- */
 .phone-input .PhoneInputCountry {
   background-color: #2D2A2A;
   border: 1px solid #4A5568;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
 }
+
+/* --- Styling untuk DROPDOWN PEMILIH NEGARA (Tema Gelap) --- */
 .PhoneInputCountrySelect {
   background-color: #2D2A2A;
   border: 1px solid #4A5568;
   color: white;
 }
+
 .PhoneInputCountrySelect-option {
   background-color: #2D2A2A;
   color: white;
   padding: 0.5rem 0.75rem;
 }
+
+/* Style saat pilihan di-hover */
 .PhoneInputCountrySelect-option--focus {
   background-color: #4A5568;
 }
+
+/* Style untuk panah dropdown */
 .PhoneInputCountrySelect-arrow {
   opacity: 0.6;
   border-color: white;
 }
 
-/* BAGIAN 4: CSS CUSTOM UNTUK react-otp-input (Gaya Underscore) */
+
+/*
+ * ===================================================================
+ * BAGIAN 4: CSS CUSTOM UNTUK react-otp-input (Gaya Underscore)
+ * ===================================================================
+*/
 .otp-input-box {
   width: 2.5rem !important;
   height: 3.5rem;
