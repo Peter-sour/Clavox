@@ -18,7 +18,8 @@
     "@ionic/react-router": "^8.7.3",
     "ionicons": "^8.0.13",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.3",

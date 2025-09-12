@@ -1,0 +1,28 @@
+src/
+ ├── assets/             # gambar, icon, sound notification, dll
+ ├── components/         # komponen kecil reusable
+ │    ├── ChatBubble.tsx
+ │    ├── ChatInput.tsx
+ │    ├── Header.tsx
+ │    └── Loader.tsx
+ ├── pages/              # halaman utama
+ │    ├── Auth/          # halaman seputar login/registrasi
+ │    │    ├── Login.tsx
+ │    │    ├── Register.tsx
+ │    │    └── OtpVerification.tsx
+ │    ├── Loading.tsx    # splash/loading screen
+ │    ├── Chat/
+ │    │    ├── ChatList.tsx     # daftar chat/room
+ │    │    └── ChatRoom.tsx     # isi room chat
+ │    ├── Profile.tsx
+ │    └── Settings.tsx
+ ├── context/            # React Context (AuthContext, ChatContext)
+ │    ├── AuthContext.tsx
+ │    └── ChatContext.tsx
+ ├── hooks/              # custom hooks (useAuth, useChat, dsb)
+ ├── services/           # API atau socket (misal Firebase/Socket.IO)
+ │    ├── api.ts
+ │    └── socket.ts
+ ├── App.tsx
+ ├── main.tsx
+ └── router.tsx          # semua route diatur di sini
