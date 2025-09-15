@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Logo from '../assets/Logo.png';
 
 const ClavoxLoadingScreen = ({ onLoadingComplete }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const navigate = useNavigate(); // <-- wajib ditambahin ini
+  const history = useHistory(); // <-- wajib ditambahin ini
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -12,7 +12,7 @@ const ClavoxLoadingScreen = ({ onLoadingComplete }) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
-            navigate("/login"); // pindah ke route tujuan
+            history.push("/login"); // pindah ke route tujuan
             if (onLoadingComplete) {
               onLoadingComplete();
             }
@@ -24,7 +24,7 @@ const ClavoxLoadingScreen = ({ onLoadingComplete }) => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, [navigate, onLoadingComplete]); // tambahin navigate di dependency
+  }, [history, onLoadingComplete]); // tambahin navigate di dependency
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center bg-[#1C1A1A]">
