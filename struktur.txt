@@ -273,3 +273,18 @@ clavox/
 
    pdwo ksnj tqxh jkkq
 https://myaccount.google.com/apppasswords
+
+Jalankan lagi generate icon
+
+Setelah gambar siap, buka terminal di folder proyekmu, lalu jalankan:
+
+npx cordova-res android --clean
+
+
+Atau kalau mau skip file yang sama:
+
+npx cordova-res android --skip
+
+
+Ini akan otomatis generate semua ukuran icon yang dibutuhkan Android, termasuk adaptive icon, dan warning harusnya hilang.
+
