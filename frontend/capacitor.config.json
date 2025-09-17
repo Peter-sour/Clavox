@@ -2,5 +2,15 @@
   "appId": "com.example.app",
   "appName": "Clavox",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": false,
+      "backgroundColor": "#1C1A1A",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": true,
+      "splashImmersive": true
+    }
+  }
 }
