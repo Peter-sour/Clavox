@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import { SplashScreen } from '@capacitor/splash-screen';
 import Logo from '../assets/Logo.png';
 
 const ClavoxLoadingScreen = ({ onLoadingComplete }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const history = useHistory(); // <-- wajib ditambahin ini
+  const history = useHistory();
 
   useEffect(() => {
+    // Sembunyikan Splash Screen saat loading React mulai
+    SplashScreen.hide();
+
     const timer = setInterval(() => {
       setLoadingProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
-            history.push("/login"); // pindah ke route tujuan
+            history.push("/login"); // pindah ke halaman login
             if (onLoadingComplete) {
               onLoadingComplete();
             }
@@ -24,7 +28,7 @@ const ClavoxLoadingScreen = ({ onLoadingComplete }) => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, [history, onLoadingComplete]); // tambahin navigate di dependency
+  }, [history, onLoadingComplete]);
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center bg-[#1C1A1A]">
