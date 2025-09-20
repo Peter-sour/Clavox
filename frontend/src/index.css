@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /*
  * ===================================================================
  * BAGIAN 3: CSS CUSTOM UNTUK LIBRARY react-phone-number-input
@@ -38,6 +37,18 @@
   border: 1px solid #4A5568;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
+  display: flex; /* Penting untuk penempatan vertikal */
+  align-items: center; /* Memusatkan item secara vertikal */
+  padding: 0.5rem 0.75rem; /* Padding internal kotak bendera */
+}
+
+/* --- Mengatur UKURAN BENDERA di dalam kotak pemilih negara --- */
+/* Ini adalah bagian penting yang mungkin hilang atau tertimpa */
+.phone-input .PhoneInputCountryIcon {
+  width: 1.5rem; /* Lebar bendera */
+  height: 1.2rem; /* Tinggi bendera */
+  margin-right: 0.5rem; /* Jarak antara bendera dan kode negara/panah */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* Sedikit shadow */
 }
 
 /* --- Styling untuk DROPDOWN PEMILIH NEGARA (Tema Gelap) --- */
@@ -45,6 +56,8 @@
   background-color: #2D2A2A;
   border: 1px solid #4A5568;
   color: white;
+  /* Atur lebar minimum agar nama negara terlihat */
+  min-width: 250px;
 }
 
 .PhoneInputCountrySelect-option {
