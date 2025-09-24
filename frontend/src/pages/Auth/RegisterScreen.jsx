@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
-import { useHistory } from 'react-router-dom'; // ✨ 1. Impor useHistory
-import Logo from '../../assets/Logo.png'; // Sesuaikan path jika perlu
-import FloatingLabelInput from '../../components/common/FloatingLabelInput'; // Sesuaikan path jika perlu
+// DIUBAH: Menggunakan useNavigate untuk React Router v6+
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom'; 
+import Logo from '../../assets/Logo.png'; 
+import FloatingLabelInput from '../../components/common/FloatingLabelInput';
+import { UserContext } from '../../components/common/AppContext';
 
 const RegisterScreen = () => {
-  const history = useHistory(); // ✨ 2. Inisialisasi history
+  // DIUBAH: Inisialisasi navigate
+  const { setUserData } = useContext(UserContext); 
+  const history = useHistory();
 
   const [formData, setFormData] = useState({
     username: '',
@@ -24,6 +28,7 @@ const RegisterScreen = () => {
     }));
   };
 
+  // DIUBAH: Logika handleSubmit untuk memanggil API
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -32,14 +37,43 @@ const RegisterScreen = () => {
       setError('Password dan konfirmasi password tidak cocok.');
       return;
     }
+    
     setIsLoading(true);
 
-    // Simulasi proses registrasi ke backend
-    setTimeout(() => {
-        setIsLoading(false);
-        // ✨ 3. Arahkan ke halaman sukses dengan membawa state username
-        history.push('/processing', { username: formData.username });
-    }, 1500);
+    try {
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // Kirim hanya email dan password sesuai kebutuhan backend
+        body: JSON.stringify({
+          username : formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Simpan username & email ke context
+        // Tangani error dari server, misalnya email sudah terdaftar (409)
+        throw new Error(data.message || 'Terjadi kesalahan saat registrasi.');
+      }
+
+      // Jika registrasi berhasil, arahkan ke halaman verifikasi OTP
+      // Bawa email untuk digunakan di halaman selanjutnya
+      setUserData({ username: formData.username, email: formData.email });
+      history.push('/processing', { state: { username: formData.username } });
+
+    } catch (err) {
+      // Tangani error jaringan atau error dari server
+      setError(err.message);
+    } finally {
+      // Pastikan loading state selalu false setelah proses selesai
+      setIsLoading(false);
+    }
   };
 
   return (

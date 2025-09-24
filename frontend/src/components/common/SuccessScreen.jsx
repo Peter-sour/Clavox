@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from './AppContext';
 
 const SuccessScreen = (props) => {
   const history = useHistory();
-  const username = props.location.state?.username || 'John Doe';
+  const { userData } = useContext(UserContext);
 
   const handleContinue = () => {
-    history.push('/login');
+    history.push('/verify-otp');
   };
 
   const CheckmarkIcon = () => (
@@ -29,7 +30,7 @@ const SuccessScreen = (props) => {
         </div>
 
         <h1 className="text-gray-300 text-2xl mb-4 leading-snug">
-          Selamat, nama pengguna <span className="text-white font-semibold">{username}</span> berhasil terdaftar di Clavox.
+          Selamat, nama pengguna <span className="text-white font-semibold">{userData.username}</span> berhasil terdaftar di Clavox.
         </h1>
 
         <p className="text-gray-400 text-sm mb-10 px-2">
