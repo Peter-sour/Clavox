@@ -8,7 +8,7 @@ import SuccessScreen from "./components/common/SuccessScreen";
 import ProcessingScreen from "./components/common/ProcessingScreen";
 import OTPPage from "./verification/OTPPage";
 import SetUsername from "./pages/SetUsername";
-import VerifySuccess from "./test/VerifySuccess";
+import VerifySuccess from "./test/VerifySucces";
 
 // ✨ Impor UserProvider
 import { UserProvider } from './components/common/AppContext';

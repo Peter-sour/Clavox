@@ -22,7 +22,7 @@ const OTPPage = () => {
     setError(null);
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/verify-otp', {
+      const response = await fetch('https://mollusklike-intactly-kennedi.ngrok-free.dev/api/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otpCode: otp })

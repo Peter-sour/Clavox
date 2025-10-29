@@ -41,7 +41,7 @@ const RegisterScreen = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://mollusklike-intactly-kennedi.ngrok-free.dev/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

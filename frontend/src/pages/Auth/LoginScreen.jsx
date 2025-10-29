@@ -12,7 +12,7 @@ const LoginScreen = () => {
     setIsGoogleLoading(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
-      window.location.href = "http://localhost:5000/auth/google";
+      window.location.href = "https://mollusklike-intactly-kennedi.ngrok-free.dev/auth/google";
     } catch (error) {
       console.error('Login error:', error);
     } finally {

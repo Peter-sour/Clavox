@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:5000";
+export const API_URL = "https://mollusklike-intactly-kennedi.ngrok-free.dev";
 
 export async function sendOTP(email) {
   const res = await fetch(`${API_URL}/auth/send-otp`, {
