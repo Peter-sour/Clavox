@@ -12,7 +12,7 @@ const LoginScreen = () => {
     setIsGoogleLoading(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
-      alert('Fungsi Google OAuth akan diimplementasikan di backend');
+      window.location.href = "http://localhost:5000/auth/google";
     } catch (error) {
       console.error('Login error:', error);
     } finally {
@@ -117,11 +117,12 @@ const LoginScreen = () => {
           <p style={{color: '#D9D9D9'}} className="text-xs leading-relaxed mb-4">
             Dengan mendaftar, Anda menyetujui <a href="#" className="text-blue-400">Syarat dan Ketentuan</a> serta <a href="#" className="text-blue-400">Kebijakan Privasi</a> kami.
           </p>
-          <p style={{color: '#999'}} className="text-xs">
+          <p
+          onClick={() => history.push("/login-user")}  
+          style={{color: '#999'}} className="text-xs">
             Sudah punya akun? <a href="#" className="text-blue-400">Masuk</a>
           </p>
         </div>
-
       </div>
     </div>
   );

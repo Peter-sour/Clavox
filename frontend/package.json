@@ -15,11 +15,12 @@
     "@capacitor/core": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
     "@capacitor/splash-screen": "^7.0.3",
-    "@ionic/react": "^8.7.3",
-    "@ionic/react-router": "^8.7.3",
+    "@ionic/react": "^8.7.7",
+    "@ionic/react-router": "^8.7.7",
     "axios": "^1.12.1",
+    "canvas-confetti": "^1.9.4",
     "ionicons": "^8.0.13",
-    "libphonenumber-js": "^1.12.16",
+    "libphonenumber-js": "^1.12.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
@@ -29,7 +30,8 @@
     "react-router-dom": "^5.3.4",
     "react-toastify": "^11.0.5",
     "socket.io-client": "^4.8.1",
-    "yup": "^1.7.0"
+    "yup": "^1.7.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.3",
